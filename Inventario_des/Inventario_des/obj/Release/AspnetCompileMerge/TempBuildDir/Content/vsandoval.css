@@ -1,0 +1,360 @@
+﻿/* vsandoval.css v0.0.1
+ * Copyright © 2017 Victor Sandoval Norambueba
+ * Free to use under the WTFPL license.
+ * victorssandovaln@gmail.com
+ */
+
+
+/*Social Bar*/
+
+.socialBar { /*JUST FOR POSITIONING THE SOCIAL DIV: CENTERED RIGHT*/
+    position: fixed;
+    right: 0px; /*THIS WILL TAKE YOU A MARGIN FROM RIGHT*/
+    top: 60%; /*CENTER THE DIV, DO NOT EDIT*/
+    transform: translate(0%, -50%); /*CENTER THE DIV, DO NOT EDIT*/
+    -webkit-transform: translate(0%, -50%); /*CENTER THE DIV, DO NOT EDIT*/
+    -moz-transform: translate(0%, -50%); /*CENTER THE DIV, DO NOT EDIT*/
+    -o-transform: translate(0%, -50%); /*CENTER THE DIV, DO NOT EDIT*/
+    background-color: #a9afbb; /*#3C4858;*/ /*WHATEVER COLOR THAT YOU WANT*/
+}
+
+.socialBar .ico {
+    display: block; /*VERTICAL POSITION*/
+    padding: 8px; /*DO NOT EDIT, MAINTAINS THE CORRECT SIZE FOR BACKGROUND COLOR*/
+}
+
+.socialBar .material-icons{
+    color: white;
+}
+
+.socialBar:hover .ico { /*JUST ANIMATION, YOU CAN REMOVE IT IF YOU WANT A FAST COLOR CHANGE*/
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.socialBar .FbIcon:hover { /*THIS MAKES A COLOR CHANGE*/
+    background-color: #3B5998;
+}
+
+.socialBar .IgIcon:hover {
+    background-color: #FFD140;
+}
+
+.socialBar .YtIcon:hover {
+    background-color: #BF221F;
+}
+
+.socialBar .SkIcon:hover {
+    background-color: #2AA4E9;
+}
+
+.socialBar .material-icons:hover {
+    background-color: purple;
+}
+
+
+/*NUEVO*/
+.uppercase {
+    text-transform: uppercase;
+}
+
+#listasoid {
+    display: none;
+}
+
+#listadireccionesid {
+    display: none;
+}
+
+#listacuentasadid {
+    display: none;
+}
+
+#listaproyectosid {
+    display: none;
+}
+
+#listacomunasid {
+    display: none;
+}
+
+#listarsid {
+    display: none;
+}
+
+#listaccid {
+    display: none;
+}
+
+#listacuentasadid {
+    display: none;
+}
+
+
+#divequipossintecnico {
+    display: none;
+}
+
+#divenviarequiposparaequipodistribuido {
+    display: none;
+}
+
+#listamarcasid {
+    display: none;
+}
+
+#listaTEid {
+    display: none;
+}
+
+.chartwrapper {
+    width: 100%;
+    position: relative;
+    padding-bottom: 50%;
+    box-sizing: border-box;
+}
+
+.chartdiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+ /*ANTIGUO*/
+
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background: purple !important;
+    color: #FFF !important;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+
+
+/* # cambiar estilo a error ============================================*/
+.controls > .error {
+    color: red !important;
+    display: inline-block;
+    *display: inline;
+    padding-left: 5px;
+    vertical-align: middle;
+    *zoom: 1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* # estilo de pagina ============================================*/
+.container {
+    width: 650px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+#pruebapersonalid {
+    display: none;
+}
+
+
+/*crear SSS*/
+
+
+#listacuentasid {
+    display: none;
+}
+
+
+#listaubicacionesid {
+    display: none;
+}
+
+
+#listaccypid {
+    display: none;
+}
+
+
+#listasocid {
+    display: none;
+}
+
+
+/*modificar SSS*/
+
+
+#buscarsolicitanteporemailid {
+    display: none;
+}
+
+
+/*typeahead*/
+
+/*.twitter-typeahead {
+    width: 100%;
+}
+
+.tt-suggestions strong {
+    font-weight: normal;
+    color: lightseagreen;
+}
+
+strong {
+    font-weight: normal;
+    color: darkblue;
+    background-color: greenyellow
+}*/
+
+
+/*.typeahead.tt-input {
+    background-color: black !important;
+}*/
+
+
+/*08-03-2018*/
+
+.tt-query {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+    color: #999
+}
+
+.tt-menu { /* used to be tt-dropdown-menu in older versions */
+    width: 422px;
+    margin-top: 4px;
+    padding: 4px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    line-height: 24px;
+}
+    
+    /* Cuando posiciona el mouse sobre una de las opciones desplegadas: fondo celeste con letras blancas */
+    .tt-suggestion.tt-cursor, .tt-suggestion:hover {
+        color: #fff;
+        background-color: #CCCBCF; /*plomo*/
+        /*background-color: #0097cf;*/ /*celeste*/
+    }
+
+    .tt-suggestion p {
+        margin: 0;
+    }
+
+strong {
+    font-weight: normal;
+    color: white;
+    background-color: #0097cf
+}
+
+
+
+.duracion-black {
+    font-weight: normal;
+    color: black !important;
+}
+
+.duracion-red {
+    font-weight: normal;
+    color: #b94a48 !important;
+}
+
+.duracion-yellow {
+    font-weight: normal;
+    color: #c09853 !important;
+}
+
+.duracion-green {
+    font-weight: normal;
+    color: #468847 !important;
+}
+
+
+
+/*
+    13-09-2018
+    Switch
+*/
+
+.material-switch > input[type="checkbox"] {
+    display: none;
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative;
+    width: 40px;
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_LayoutISS.cshtml";
+}
+
+
+@{
+    string mensaje_error = string.Empty;
+    mensaje_error = ViewBag.MensajeError;
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="red">
+            <h4 class="title">Ops!</h4>
+            <p class="category">Se ha producido un error. Favor informar a Desarrollo de Sistemas.</p>
+        </div>
+        <div class="card-content">
+
+            <div class="col-md-12">
+
+                <p class="text-danger">
+                    @mensaje_error
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

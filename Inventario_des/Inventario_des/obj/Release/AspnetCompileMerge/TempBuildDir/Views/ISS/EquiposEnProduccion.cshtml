@@ -1,0 +1,107 @@
+﻿@model  Inventario_des.Models.oEquipoDistribuido
+
+@{
+    ViewBag.Title = "EquiposEnProduccion";
+    Layout = "~/Views/Shared/_LayoutISS.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Equipos en Producción</h4>
+            <p class="category">Listado de Equipos que fueron entregados/retirados</p>
+        </div>
+        <div class="card-content table-responsive">
+
+            @using (Html.BeginForm("EquiposEnProduccion", "ISS", FormMethod.Post, new { onsubmit = "return validateFormEquiposEnProduccion()" }))
+            {
+
+                <!-- Tabla Equipos -->
+
+                <table class="table table-hover table-striped" id="myTable">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].UbicacionNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].ProyectoNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].UsuarioFinalNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].TipoNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].MarcaNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].ModeloNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].NumeroSerie)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].SubEstadoNombre)</th>
+                            @*<th>@Html.DisplayNameFor(model => model.equipos[0].actualizar)</th>*@
+                            <th>
+                                <i class="material-icons" title="Actualizar">add_shopping_cart</i>
+                                <p class="hidden-lg hidden-md">Actualizar</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.equipos.Count > 0)
+                        {
+                            for (int i = 0; i < Model.equipos.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].UbicacionNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].ProyectoNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].UsuarioFinalNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].TipoNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].MarcaNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].ModeloNombre)</td>
+                                    @*<td>@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroSerie)</td>*@
+                                    <td><a href="@Url.Action("ModificarEquipo", "ISS", new { numeroserie = Model.equipos[i].NumeroSerie})">@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroSerie)</a></td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].SubEstadoNombre)</td>
+                                    <td style="text-align: center">@Html.CheckBoxFor(modelItem => modelItem.equipos[i].actualizar)</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+
+
+                <!-- Sub-Estado -->
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">import_export</i> Sub-Estado
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating controls" id="divsubestado">
+                                        @Html.DropDownListFor(model => model.equipo.SubEstadoId, new SelectList(ViewBag.ListaSubEstadoEquipos, "Id", "Nombre"), "Seleccione Sub-Estado", new { @class = "form-control", @id = "subestadoid" })
+                                        <span id="subestadoid_error1" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div id="divenviarequiposparaequipodistribuido">
+                    @Html.EditorFor(x => x.equipos)
+                </div>
+
+                <div class="col-md-6">
+                    @if (Model.equipos.Count() > 0)
+                    {
+                        <button type="submit" id="submitEEP" name="submitButton" value="EquiposEnProduccion" class="btn btn-primary">Guardar</button>
+                        <div class="clearfix"></div>
+                    }
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+

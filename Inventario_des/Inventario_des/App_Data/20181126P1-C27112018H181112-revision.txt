@@ -1,0 +1,6 @@
+Tipo Documento: C
+Numero de Serie: 20181126P1
+¡Equipo 20181126P1 encontrado!
+Id Equipo: 13
+Directorio: C:\Users\vsandoval\Documents\Codigo\VS2017\Inventario\Inventario_des\Inventario_des\App_Data\
+PDF generado!

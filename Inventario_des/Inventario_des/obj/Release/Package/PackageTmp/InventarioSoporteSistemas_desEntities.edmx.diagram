@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b49761255c414e2f9fc639b8b75eb2f0" Name="Diagram1" ZoomLevel="50">
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.CentroCosto" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Colaborador" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Comuna" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Direccion" Width="1.5" PointX="0.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Distribucion" Width="1.5" PointX="0.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Empresa" Width="1.5" PointX="0.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Equipo" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.EstadoEquipo" Width="1.5" PointX="0.75" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Guia" Width="1.5" PointX="0.75" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.MacroEmpresa" Width="1.5" PointX="0.75" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Marca" Width="1.5" PointX="0.75" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Proveedor" Width="1.5" PointX="1.5" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Proyecto" Width="1.5" PointX="0.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.ProyectoConexion" Width="1.5" PointX="3" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Rol" Width="1.5" PointX="1.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.SistemaOperativo" Width="1.5" PointX="0.75" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.SubEstadoEquipo" Width="1.5" PointX="0.75" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.TipoEquipo" Width="1.5" PointX="0.75" PointY="56" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Ubicacion" Width="1.5" PointX="0.75" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventarioSoporteSistemas_desModel.Usuario" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_CentroCosto" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_CentroCosto" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Colaborador_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Colaborador" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Colaborador_TE" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Colaborador_TP" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Guia_Colaborador" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Comuna" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_Comuna" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Direccion" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_Direccion" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Distribucion" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_EstadoEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Guia" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_MacroEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Proyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_SistemaOperativo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_SubEstadoEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_TipoEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Usuario_GA" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Usuario_SO" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Equipo_Usuario_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_SubEstadoEquipo_EstadoEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_Guia_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_MacroEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_Proyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="InventarioSoporteSistemas_desModel.FK_ProyectoConexion_Ubicacion" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

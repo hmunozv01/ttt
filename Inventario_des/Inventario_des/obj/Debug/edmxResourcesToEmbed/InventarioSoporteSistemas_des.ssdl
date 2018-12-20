@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventarioSoporteSistemas_desModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Colaborador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="NombreCompleto" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cargo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RolId" Type="int" />
+  </EntityType>
+  <EntityType Name="Equipo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoId" Type="int" />
+    <Property Name="MarcaId" Type="int" />
+    <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Serie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comentario" Type="nvarchar" MaxLength="100" />
+    <Property Name="GuiaId" Type="int" />
+    <Property Name="FechaCreacion" Type="smalldatetime" />
+    <Property Name="CreadorId" Type="int" />
+    <Property Name="EstadoId" Type="int" />
+    <Property Name="SubEstadoId" Type="int" />
+  </EntityType>
+  <EntityType Name="EstadoEquipo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nchar" MaxLength="10" />
+    <Property Name="Tipo" Type="int" />
+  </EntityType>
+  <EntityType Name="Guia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroGuia" Type="int" />
+    <Property Name="ProveedorId" Type="int" />
+    <Property Name="OrdenCompra" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotaVenta" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaGuia" Type="smalldatetime" />
+    <Property Name="FechaCreacion" Type="smalldatetime" />
+    <Property Name="CreadorId" Type="int" />
+    <Property Name="NumeroFactura" Type="int" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rut" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SubEstadoEquipo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EstadoEquipoId" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoEquipo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tecnico" Type="int" />
+    <Property Name="Inventario" Type="int" />
+  </EntityType>
+  <Association Name="FK_Colaborador_Colaborador">
+    <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+    <End Role="Colaborador1" Type="Self.Colaborador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Colaborador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colaborador1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Colaborador_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colaborador">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_Colaborador">
+    <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colaborador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="CreadorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_EstadoEquipo">
+    <End Role="EstadoEquipo" Type="Self.EstadoEquipo" Multiplicity="0..1" />
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoEquipo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_Guia">
+    <End Role="Guia" Type="Self.Guia" Multiplicity="0..1" />
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="GuiaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="MarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_SubEstadoEquipo">
+    <End Role="SubEstadoEquipo" Type="Self.SubEstadoEquipo" Multiplicity="1" />
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SubEstadoEquipo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_TipoEquipo">
+    <End Role="TipoEquipo" Type="Self.TipoEquipo" Multiplicity="0..1" />
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoEquipo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="TipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guia_Colaborador">
+    <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+    <End Role="Guia" Type="Self.Guia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colaborador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Guia">
+        <PropertyRef Name="CreadorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guia_Proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="Guia" Type="Self.Guia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Guia">
+        <PropertyRef Name="ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rol_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Rol1" Type="Self.Rol" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rol1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubEstadoEquipo_EstadoEquipo">
+    <End Role="EstadoEquipo" Type="Self.EstadoEquipo" Multiplicity="0..1" />
+    <End Role="SubEstadoEquipo" Type="Self.SubEstadoEquipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoEquipo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubEstadoEquipo">
+        <PropertyRef Name="EstadoEquipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_DB_Obtener_MyTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="InventarioSoporteSistemas_desModelStoreContainer">
+    <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipo" EntityType="Self.Equipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoEquipo" EntityType="Self.EstadoEquipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guia" EntityType="Self.Guia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubEstadoEquipo" EntityType="Self.SubEstadoEquipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoEquipo" EntityType="Self.TipoEquipo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Colaborador_Colaborador" Association="Self.FK_Colaborador_Colaborador">
+      <End Role="Colaborador" EntitySet="Colaborador" />
+      <End Role="Colaborador1" EntitySet="Colaborador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Colaborador_Rol" Association="Self.FK_Colaborador_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Colaborador" EntitySet="Colaborador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_Colaborador" Association="Self.FK_Equipo_Colaborador">
+      <End Role="Colaborador" EntitySet="Colaborador" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_EstadoEquipo" Association="Self.FK_Equipo_EstadoEquipo">
+      <End Role="EstadoEquipo" EntitySet="EstadoEquipo" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_Guia" Association="Self.FK_Equipo_Guia">
+      <End Role="Guia" EntitySet="Guia" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_Marca" Association="Self.FK_Equipo_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_SubEstadoEquipo" Association="Self.FK_Equipo_SubEstadoEquipo">
+      <End Role="SubEstadoEquipo" EntitySet="SubEstadoEquipo" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_TipoEquipo" Association="Self.FK_Equipo_TipoEquipo">
+      <End Role="TipoEquipo" EntitySet="TipoEquipo" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guia_Colaborador" Association="Self.FK_Guia_Colaborador">
+      <End Role="Colaborador" EntitySet="Colaborador" />
+      <End Role="Guia" EntitySet="Guia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guia_Proveedor" Association="Self.FK_Guia_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Guia" EntitySet="Guia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rol_Rol" Association="Self.FK_Rol_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Rol1" EntitySet="Rol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubEstadoEquipo_EstadoEquipo" Association="Self.FK_SubEstadoEquipo_EstadoEquipo">
+      <End Role="EstadoEquipo" EntitySet="EstadoEquipo" />
+      <End Role="SubEstadoEquipo" EntitySet="SubEstadoEquipo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

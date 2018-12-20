@@ -1,0 +1,6 @@
+Tipo Documento: H
+Numero de Serie: 20181201P2
+¡Equipo 20181201P2 encontrado!
+Id Equipo: 10
+Directorio: C:\Users\vsandoval\Documents\Codigo\VS2017\Inventario\Inventario_des\Inventario_des\App_Data\
+PDF generado!

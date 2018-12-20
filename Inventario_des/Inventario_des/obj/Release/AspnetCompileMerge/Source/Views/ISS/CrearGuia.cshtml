@@ -1,0 +1,401 @@
+﻿@model  Inventario_des.Models.oGuia
+
+@{
+    ViewBag.Title = "CrearGuia";
+    Layout = "~/Views/Shared/_LayoutISS.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Guía</h4>
+            <p class="category">Favor completar datos faltantes del formulario para la CREACIÓN de una Guía </p>
+        </div>
+        <div class="card-content">
+
+            <!-- Guía -->
+
+            <div class="tab-pane active" id="guiaid" name="guia">
+                @*<div class="card">
+                    <div class="card-content">*@
+
+                @using (Html.BeginForm("CrearGuia", "ISS", FormMethod.Post, new { onsubmit = "return validateFormCrearGuia()" }))
+                {
+
+                    <!-- Encabezado -->
+
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">assignment</i> Encabezado
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            @*<div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating" id="divcreadoremail">
+                                        @Html.LabelFor(model => model.CreadorEmail, htmlAttributes: new { @class = "control-label" })
+                                        @Html.DisplayFor(model => model.CreadorEmail, new { htmlAttributes = new { @class = "form-control", @id = "creadoremailid" } })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.FechaCreacion, htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group input-append date">
+                                            @Html.DisplayFor(model => model.FechaCreacion, new { htmlAttributes = new { @class = "form-control", @id = "fechacreacionid" } })
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+
+                            <div class="row">
+
+                                @*<div class="col-md-3">
+                                    <div class="form-group label-floating" id="divproveedor">
+                                        @Html.LabelFor(model => model.ProveedorNombre, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.ProveedorNombre, new { htmlAttributes = new { @class = "form-control typeahead", @id = "proveedorid" } })
+                                        <span id="proveedorid_error" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>*@
+
+                                <div class="col-md-1">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Proveedor</label>
+                                        <input type="text" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="dropdown focus_ext">
+                                        @Html.DropDownListFor(model => model.ProveedorId, new SelectList(ViewBag.ListaProveedores, "Id", "Nombre"), "Seleccione Proveedor", new { @class = "form-control", @id = "proveedorid" })
+                                        <span id="proveedorid_error" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.FechaGuia, htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group input-append date">
+                                            @Html.EditorFor(model => model.FechaGuia, new { htmlAttributes = new { @class = "form-control", @id = "fechaguiaid" } })
+                                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                        </div>
+                                        <span id="fechaguiaid_error" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.NumeroGuia, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.NumeroGuia, new { htmlAttributes = new { @class = "form-control", @id = "numeroguiaid" } })
+                                        <span id="numeroguiaid_error" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.OrdenCompra, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.OrdenCompra, new { htmlAttributes = new { @class = "form-control uppercase", @id = "ordencompraid" } })
+                                        <span id="ordencompraid_error" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>
+                                @*<div class="col-md-2">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.NotaVenta, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.NotaVenta, new { htmlAttributes = new { @class = "form-control", @id = "notaventaid" } })
+                                        <span id="notaventaid_error" style="display: none;">Campo Obligatorio</span>
+                                    </div>
+                                </div>*@
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!--Documentos -->
+
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <!--<img class="img" src="../assets/img/faces/marc.jpg" />-->
+                                    <i class="material-icons">file_upload</i> Documentos (opcional)
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                @*<div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Documentos</label>
+                                            <input type="text" class="form-control" disabled>
+                                        </div>
+                                    </div>*@
+                                <div class="col-md-10">
+                                    <div class="input-group">                               
+                                        <label class="input-group-btn ">
+                                            <span class="btn btn-file btn-info">
+                                                Buscar&hellip; <input type="file" style="display: none;" multiple>
+                                            </span>
+                                        </label>
+                                        <input type="text" class="form-control" disabled>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Lista de Equipos -->
+
+                    @*<div class="tab-pane" id="equiposid" name="equipos">
+                        <div class="card">
+                            <div class="card-content table-responsive">
+
+                                @if (Model != null)
+                                {
+                                    List<Inventario_des.Models.oEquipo> equipos = Model.equipos.OrderBy(x => x.MarcaNombre).ToList();
+
+                                    <table class="table table-hover table-striped" id="myTable">
+                                        <thead class="text-primary">
+                                            <tr>
+                                                <th>@Html.DisplayNameFor(model => model.equipos[0].TipoNombre)</th>
+                                                <th>@Html.DisplayNameFor(model => model.equipos[0].MarcaNombre)</th>
+                                                <th>@Html.DisplayNameFor(model => model.equipos[0].ModeloNombre)</th>
+                                                <th>@Html.DisplayNameFor(model => model.equipos[0].NumeroSerie)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (equipos.Count > 0)
+                                            {
+                                                foreach (var equipo in equipos)
+                                                {
+                                                    <tr>
+                                                        <td>@Html.DisplayFor(modelItem => equipo.TipoNombre)</td>
+                                                        <td>@Html.DisplayFor(modelItem => equipo.MarcaNombre)</td>
+                                                        <td>@Html.DisplayFor(modelItem => equipo.ModeloNombre)</td>
+                                                        <td>@Html.DisplayFor(modelItem => equipo.NumeroSerie)</td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                    //if (Session["RolId"].ToString().Equals("1") || Session["RolId"].ToString().Equals("2") || Session["RolId"].ToString().Equals("4"))
+                                    //{
+                                    //    @Html.Action("CrearEquipo");
+                                    //}
+                                }
+                            </div>
+                        </div>
+                    </div>*@
+
+
+                    <!-- Lista de Equipos -->
+
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">add_to_queue</i> Nuevo Equipo 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content table-responsive">
+
+                            @if (Model != null)
+                            {
+                                List<Inventario_des.Models.oEquipo> equipos = Model.equipos.OrderBy(x => x.MarcaNombre).ToList();
+
+                                <table class="table table-hover table-striped" id="myTable">
+                                    <thead class="text-primary">
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.equipos[0].TipoNombre)</th>
+                                            <th>@Html.DisplayNameFor(model => model.equipos[0].MarcaNombre)</th>
+                                            <th>@Html.DisplayNameFor(model => model.equipos[0].ModeloNombre)</th>
+                                            <th>@Html.DisplayNameFor(model => model.equipos[0].NumeroSerie)</th>
+                                            @*<th>@Html.DisplayNameFor(model => model.equipos[0].Bolso)</th>*@
+
+                                            <th>
+                                                <i class="material-icons" title="Bolso">work</i>
+                                                <p class="hidden-lg hidden-md">Bolso</p>
+                                            </th>
+
+                                            @*<th>@Html.DisplayNameFor(model => model.equipos[0].Mouse)</th>*@
+
+                                            <th>
+                                                <i class="material-icons" title="Mouse">mouse</i>
+                                                <p class="hidden-lg hidden-md">Mouse</p>
+                                            </th>
+
+                                            @*<th>@Html.DisplayNameFor(model => model.equipos[0].Candado)</th>*@
+
+                                            <th>
+                                                <i class="material-icons" title="Candado">lock</i>
+                                                <p class="hidden-lg hidden-md">Candado</p>
+                                            </th>
+
+                                            <th>@Html.DisplayNameFor(model => model.equipos[0].Comentario)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (equipos.Count > 0)
+                                        {
+                                            foreach (var equipo in equipos)
+                                            {
+                                                <tr>
+                                                    <td>@Html.EditorFor(modelItem => equipo.TipoNombre)</td>
+                                                    <td>@Html.EditorFor(modelItem => equipo.MarcaNombre)</td>
+                                                    <td>@Html.EditorFor(modelItem => equipo.ModeloNombre)</td>
+                                                    <td>@Html.EditorFor(modelItem => equipo.NumeroSerie)</td>
+                                                    <td style="text-align: center">@Html.CheckBoxFor(modelItem => equipo.Bolso)</td>
+                                                    <td style="text-align: center">@Html.CheckBoxFor(modelItem => equipo.Mouse)</td>
+                                                    <td style="text-align: center">@Html.CheckBoxFor(modelItem => equipo.Candado)</td>
+                                                    <td>@Html.EditorFor(modelItem => equipo.Comentario)</td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+
+                                //if (Session["RolId"].ToString().Equals("1") || Session["RolId"].ToString().Equals("2") || Session["RolId"].ToString().Equals("4"))
+                                //{
+                                //    @Html.Action("CrearEquipo");
+                                //}
+                            }
+
+                            <input type="button" id="btnAgregarEquipo" value="Agregar Equipo" class="btn btn-info" />
+
+                        </div>
+                    </div>
+
+
+                    <!-- Equipo Nuevo -->
+
+                    @*<div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">add_to_queue</i> Nuevo Equipo 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            @if (Model != null)
+                            {
+                                Inventario_des.Models.oEquipo equipo_nuevo = new Inventario_des.Models.oEquipo();
+                                Model.equipos.Add(equipo_nuevo);
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group label-floating" id="divequipotipo">
+                                            @Html.LabelFor(model => equipo_nuevo.TipoNombre, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => equipo_nuevo.TipoNombre, new { htmlAttributes = new { @class = "form-control typeahead", @id = "equipo_tipo_id" } })
+                                            <span id="equipo_tipo_id_error" style="display: none;">Campo Obligatorio</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group label-floating" id="divequipomarca">
+                                            @Html.LabelFor(model => equipo_nuevo.MarcaNombre, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => equipo_nuevo.MarcaNombre, new { htmlAttributes = new { @class = "form-control typeahead", @id = "equipo_marca_id" } })
+                                            <span id="equipo_marca_id_error" style="display: none;">Campo Obligatorio</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group label-floating" id="divequipomodelo">
+                                            @Html.LabelFor(model => equipo_nuevo.ModeloNombre, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => equipo_nuevo.ModeloNombre, new { htmlAttributes = new { @class = "form-control", @id = "equipo_modelo_id" } })
+                                            <span id="equipo_modelo_id_error" style="display: none;">Campo Obligatorio</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group label-floating" id="divequiposerie">
+                                            @Html.LabelFor(model => equipo_nuevo.NumeroSerie, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => equipo_nuevo.NumeroSerie, new { htmlAttributes = new { @class = "form-control", @id = "equipo_serie_id" } })
+                                            <span id="equipo_serie_id_error" style="display: none;">Campo Obligatorio</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-1 text-center">
+                                        @Html.CheckBoxFor(m => equipo_nuevo.Bolso, new { @class = "" })
+                                    </div>
+                                    <div class="col-md-2 text-left">
+                                        @Html.LabelFor(m => equipo_nuevo.Bolso, new { @class = "" })
+                                    </div>
+
+                                    <div class="col-md-1 text-center">
+                                        @Html.CheckBoxFor(m => equipo_nuevo.Mouse, new { @class = "" })
+                                    </div>
+                                    <div class="col-md-2 text-left">
+                                        @Html.LabelFor(m => equipo_nuevo.Mouse, new { @class = "" })
+                                    </div>
+
+                                    <div class="col-md-1 text-center">
+                                        @Html.CheckBoxFor(m => equipo_nuevo.Candado, new { @class = "" })
+                                    </div>
+                                    <div class="col-md-2 text-left">
+                                        @Html.LabelFor(m => equipo_nuevo.Candado, new { @class = "" })
+                                    </div>
+                                </div>
+
+                                // Agregar equipo_nuevo a la guia
+                                //Model.equipos.Add(equipo_nuevo);
+
+                            }
+                        </div>
+                    </div>*@
+
+                    
+
+                    @Html.HiddenFor(m => m.GuiaId)
+
+                    @Html.HiddenFor(m => m.NumeroGuia)
+
+                    @Html.HiddenFor(m => m.OrdenCompra)
+                    @Html.HiddenFor(m => m.NotaVenta)
+
+                    @Html.HiddenFor(m => m.FechaGuia)
+                    @Html.HiddenFor(m => m.FechaCreacion)
+
+                    @Html.HiddenFor(m => m.ProveedorId)
+                    @Html.HiddenFor(m => m.ProveedorNombre)
+
+                    @Html.HiddenFor(m => m.CreadorId)
+                    @Html.HiddenFor(m => m.CreadorNombre)
+
+
+
+                    <button type="submit" id="btnCrearGuiaId" name="btnCrearGuia" value="CrearGuia" class="btn btn-primary pull-right">Crear Guía</button>
+                    <div class="clearfix"></div>
+
+                }
+                @*</div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@{string stringmarcas = string.Empty;}
+@{stringmarcas = ViewBag.StringMarcas;}
+
+<textarea class="form-control" rows="1" id="listamarcasid" name="listamarcas" placeholder="">@stringmarcas</textarea>
+
+
+@{string stringTE = string.Empty;}
+@{stringTE = ViewBag.StringTipoEquipo;}
+
+<textarea class="form-control" rows="1" id="listaTEid" name="listaTE" placeholder="">@stringTE</textarea>
+
+

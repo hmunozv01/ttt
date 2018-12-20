@@ -1,0 +1,1838 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InventarioSoporteSistemas_desModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CentroCosto">
+          <Key>
+            <PropertyRef Name="CCId" />
+          </Key>
+          <Property Name="CCId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CCCodigo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCDescripcion" Type="nvarchar" MaxLength="150" />
+          <Property Name="CCVigencia" Type="int" />
+        </EntityType>
+        <EntityType Name="Colaborador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+          <Property Name="NombreCompleto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cargo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RolId" Type="int" />
+        </EntityType>
+        <EntityType Name="Comuna">
+          <Key>
+            <PropertyRef Name="ComunaId" />
+          </Key>
+          <Property Name="ComunaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComunaNombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="DireccionId" />
+          </Key>
+          <Property Name="DireccionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DireccionNombre" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Distribucion">
+          <Key>
+            <PropertyRef Name="DistribucionId" />
+          </Key>
+          <Property Name="DistribucionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rut" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="EmpresaId" />
+          </Key>
+          <Property Name="EmpresaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rut" Type="nvarchar" MaxLength="15" />
+          <Property Name="RazonSocial" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Equipo">
+          <Key>
+            <PropertyRef Name="EquipoId" />
+          </Key>
+          <Property Name="EquipoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoId" Type="int" />
+          <Property Name="MarcaId" Type="int" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Serie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comentario" Type="nvarchar" MaxLength="100" />
+          <Property Name="GuiaId" Type="int" />
+          <Property Name="FechaCreacion" Type="smalldatetime" />
+          <Property Name="CreadorId" Type="int" />
+          <Property Name="EstadoId" Type="int" />
+          <Property Name="SubEstadoId" Type="int" />
+          <Property Name="TecnicoPreId" Type="int" />
+          <Property Name="Bolso" Type="int" />
+          <Property Name="Mouse" Type="int" />
+          <Property Name="Candado" Type="int" />
+          <Property Name="EmpresaId" Type="int" />
+          <Property Name="MacroEmpresaId" Type="int" />
+          <Property Name="ProyectoId" Type="int" />
+          <Property Name="ComunaId" Type="int" />
+          <Property Name="UbicacionId" Type="int" />
+          <Property Name="CentroCostoId" Type="int" />
+          <Property Name="GerenteAutorizaId" Type="int" />
+          <Property Name="SolicitanteId" Type="int" />
+          <Property Name="UsuarioFinalId" Type="int" />
+          <Property Name="DireccionId" Type="int" />
+          <Property Name="Procesador" Type="nvarchar" MaxLength="100" />
+          <Property Name="Memoria" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiscoDuro" Type="nvarchar" MaxLength="100" />
+          <Property Name="DireccionMAC" Type="nvarchar" MaxLength="100" />
+          <Property Name="DireccionIP" Type="nvarchar" MaxLength="100" />
+          <Property Name="NombrePC" Type="nvarchar" MaxLength="100" />
+          <Property Name="SistemaOperativoId" Type="int" />
+          <Property Name="KeyWindows" Type="nvarchar" MaxLength="100" />
+          <Property Name="TecnicoEntId" Type="int" />
+          <Property Name="DistribucionId" Type="int" />
+          <Property Name="FechaDistribucion" Type="smalldatetime" />
+          <Property Name="EmailDistribucion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EstadoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tipo" Type="int" />
+        </EntityType>
+        <EntityType Name="Guia">
+          <Key>
+            <PropertyRef Name="GuiaId" />
+          </Key>
+          <Property Name="GuiaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroGuia" Type="int" />
+          <Property Name="ProveedorId" Type="int" />
+          <Property Name="OrdenCompra" Type="nvarchar" MaxLength="50" />
+          <Property Name="NotaVenta" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaGuia" Type="smalldatetime" />
+          <Property Name="FechaCreacion" Type="smalldatetime" />
+          <Property Name="CreadorId" Type="int" />
+          <Property Name="NumeroFactura" Type="int" />
+        </EntityType>
+        <EntityType Name="MacroEmpresa">
+          <Key>
+            <PropertyRef Name="MacroEmpresaId" />
+          </Key>
+          <Property Name="MacroEmpresaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MacroEmpresaNombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rut" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="ProyectoId" />
+          </Key>
+          <Property Name="ProyectoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProyectoNombre" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProyectoConexion">
+          <Key>
+            <PropertyRef Name="CoId" />
+          </Key>
+          <Property Name="CoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProyectoId" Type="int" Nullable="false" />
+          <Property Name="MacroEmpresaId" Type="int" Nullable="false" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="CCId" Type="int" Nullable="false" />
+          <Property Name="UbicacionId" Type="int" Nullable="false" />
+          <Property Name="ComunaId" Type="int" Nullable="false" />
+          <Property Name="DireccionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SistemaOperativo">
+          <Key>
+            <PropertyRef Name="SOId" />
+          </Key>
+          <Property Name="SOId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SONombre" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SubEstadoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EstadoEquipoId" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tecnico" Type="int" />
+          <Property Name="Inventario" Type="int" />
+        </EntityType>
+        <EntityType Name="Ubicacion">
+          <Key>
+            <PropertyRef Name="UbicacionId" />
+          </Key>
+          <Property Name="UbicacionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UbicacionNombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+          <Property Name="NombreCompleto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cargo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Colaborador_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_CentroCosto">
+          <End Role="CentroCosto" Type="Self.CentroCosto" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroCosto">
+              <PropertyRef Name="CCId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="CentroCostoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Colaborador">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="CreadorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Colaborador_TE">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="TecnicoEntId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Colaborador_TP">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="TecnicoPreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Comuna">
+          <End Role="Comuna" Type="Self.Comuna" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comuna">
+              <PropertyRef Name="ComunaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="ComunaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Direccion">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="DireccionId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Distribucion">
+          <End Role="Distribucion" Type="Self.Distribucion" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distribucion">
+              <PropertyRef Name="DistribucionId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="DistribucionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="EmpresaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_EstadoEquipo">
+          <End Role="EstadoEquipo" Type="Self.EstadoEquipo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Guia">
+          <End Role="Guia" Type="Self.Guia" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guia">
+              <PropertyRef Name="GuiaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="GuiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_MacroEmpresa">
+          <End Role="MacroEmpresa" Type="Self.MacroEmpresa" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MacroEmpresa">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="MarcaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="ProyectoId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="ProyectoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_SistemaOperativo">
+          <End Role="SistemaOperativo" Type="Self.SistemaOperativo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SistemaOperativo">
+              <PropertyRef Name="SOId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="SistemaOperativoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_SubEstadoEquipo">
+          <End Role="SubEstadoEquipo" Type="Self.SubEstadoEquipo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubEstadoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="SubEstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_TipoEquipo">
+          <End Role="TipoEquipo" Type="Self.TipoEquipo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="TipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Ubicacion">
+          <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubicacion">
+              <PropertyRef Name="UbicacionId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="UbicacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Usuario_GA">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="GerenteAutorizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Usuario_SO">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="SolicitanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Usuario_UF">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="UsuarioFinalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guia_Colaborador">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Guia" Type="Self.Guia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Guia">
+              <PropertyRef Name="CreadorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guia_Proveedor">
+          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+          <End Role="Guia" Type="Self.Guia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Guia">
+              <PropertyRef Name="ProveedorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_CentroCosto">
+          <End Role="CentroCosto" Type="Self.CentroCosto" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroCosto">
+              <PropertyRef Name="CCId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="CCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Comuna">
+          <End Role="Comuna" Type="Self.Comuna" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comuna">
+              <PropertyRef Name="ComunaId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="ComunaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Direccion">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="DireccionId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="EmpresaId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_MacroEmpresa">
+          <End Role="MacroEmpresa" Type="Self.MacroEmpresa" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MacroEmpresa">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="ProyectoId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="ProyectoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Ubicacion">
+          <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubicacion">
+              <PropertyRef Name="UbicacionId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="UbicacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubEstadoEquipo_EstadoEquipo">
+          <End Role="EstadoEquipo" Type="Self.EstadoEquipo" Multiplicity="0..1" />
+          <End Role="SubEstadoEquipo" Type="Self.SubEstadoEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubEstadoEquipo">
+              <PropertyRef Name="EstadoEquipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_DB_Obtener_Cuentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_DB_Obtener_MyTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="InventarioSoporteSistemas_desModelStoreContainer">
+          <EntitySet Name="CentroCosto" EntityType="Self.CentroCosto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comuna" EntityType="Self.Comuna" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distribucion" EntityType="Self.Distribucion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipo" EntityType="Self.Equipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoEquipo" EntityType="Self.EstadoEquipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Guia" EntityType="Self.Guia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MacroEmpresa" EntityType="Self.MacroEmpresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proyecto" EntityType="Self.Proyecto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProyectoConexion" EntityType="Self.ProyectoConexion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SistemaOperativo" EntityType="Self.SistemaOperativo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubEstadoEquipo" EntityType="Self.SubEstadoEquipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoEquipo" EntityType="Self.TipoEquipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Colaborador_Rol" Association="Self.FK_Colaborador_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Colaborador" EntitySet="Colaborador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_CentroCosto" Association="Self.FK_Equipo_CentroCosto">
+            <End Role="CentroCosto" EntitySet="CentroCosto" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Colaborador" Association="Self.FK_Equipo_Colaborador">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Colaborador_TE" Association="Self.FK_Equipo_Colaborador_TE">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Colaborador_TP" Association="Self.FK_Equipo_Colaborador_TP">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Comuna" Association="Self.FK_Equipo_Comuna">
+            <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Direccion" Association="Self.FK_Equipo_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Distribucion" Association="Self.FK_Equipo_Distribucion">
+            <End Role="Distribucion" EntitySet="Distribucion" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Empresa" Association="Self.FK_Equipo_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_EstadoEquipo" Association="Self.FK_Equipo_EstadoEquipo">
+            <End Role="EstadoEquipo" EntitySet="EstadoEquipo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Guia" Association="Self.FK_Equipo_Guia">
+            <End Role="Guia" EntitySet="Guia" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_MacroEmpresa" Association="Self.FK_Equipo_MacroEmpresa">
+            <End Role="MacroEmpresa" EntitySet="MacroEmpresa" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Marca" Association="Self.FK_Equipo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Proyecto" Association="Self.FK_Equipo_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_SistemaOperativo" Association="Self.FK_Equipo_SistemaOperativo">
+            <End Role="SistemaOperativo" EntitySet="SistemaOperativo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_SubEstadoEquipo" Association="Self.FK_Equipo_SubEstadoEquipo">
+            <End Role="SubEstadoEquipo" EntitySet="SubEstadoEquipo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_TipoEquipo" Association="Self.FK_Equipo_TipoEquipo">
+            <End Role="TipoEquipo" EntitySet="TipoEquipo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Ubicacion" Association="Self.FK_Equipo_Ubicacion">
+            <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Usuario_GA" Association="Self.FK_Equipo_Usuario_GA">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Usuario_SO" Association="Self.FK_Equipo_Usuario_SO">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Usuario_UF" Association="Self.FK_Equipo_Usuario_UF">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guia_Colaborador" Association="Self.FK_Guia_Colaborador">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Guia" EntitySet="Guia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guia_Proveedor" Association="Self.FK_Guia_Proveedor">
+            <End Role="Proveedor" EntitySet="Proveedor" />
+            <End Role="Guia" EntitySet="Guia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_CentroCosto" Association="Self.FK_ProyectoConexion_CentroCosto">
+            <End Role="CentroCosto" EntitySet="CentroCosto" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Comuna" Association="Self.FK_ProyectoConexion_Comuna">
+            <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Direccion" Association="Self.FK_ProyectoConexion_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Empresa" Association="Self.FK_ProyectoConexion_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_MacroEmpresa" Association="Self.FK_ProyectoConexion_MacroEmpresa">
+            <End Role="MacroEmpresa" EntitySet="MacroEmpresa" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Proyecto" Association="Self.FK_ProyectoConexion_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Ubicacion" Association="Self.FK_ProyectoConexion_Ubicacion">
+            <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubEstadoEquipo_EstadoEquipo" Association="Self.FK_SubEstadoEquipo_EstadoEquipo">
+            <End Role="EstadoEquipo" EntitySet="EstadoEquipo" />
+            <End Role="SubEstadoEquipo" EntitySet="SubEstadoEquipo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InventarioSoporteSistemas_desModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CentroCosto">
+          <Key>
+            <PropertyRef Name="CCId" />
+          </Key>
+          <Property Name="CCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CCCodigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCDescripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CCVigencia" Type="Int32" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_CentroCosto" FromRole="CentroCosto" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_CentroCosto" FromRole="CentroCosto" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="Colaborador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RolId" Type="Int32" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Colaborador_Rol" FromRole="Colaborador" ToRole="Rol" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Colaborador" FromRole="Colaborador" ToRole="Equipo" />
+          <NavigationProperty Name="Equipo1" Relationship="Self.FK_Equipo_Colaborador_TE" FromRole="Colaborador" ToRole="Equipo" />
+          <NavigationProperty Name="Equipo2" Relationship="Self.FK_Equipo_Colaborador_TP" FromRole="Colaborador" ToRole="Equipo" />
+          <NavigationProperty Name="Guia" Relationship="Self.FK_Guia_Colaborador" FromRole="Colaborador" ToRole="Guia" />
+        </EntityType>
+        <EntityType Name="Comuna">
+          <Key>
+            <PropertyRef Name="ComunaId" />
+          </Key>
+          <Property Name="ComunaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComunaNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Comuna" FromRole="Comuna" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_Comuna" FromRole="Comuna" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="DireccionId" />
+          </Key>
+          <Property Name="DireccionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DireccionNombre" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Direccion" FromRole="Direccion" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_Direccion" FromRole="Direccion" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="Distribucion">
+          <Key>
+            <PropertyRef Name="DistribucionId" />
+          </Key>
+          <Property Name="DistribucionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Distribucion" FromRole="Distribucion" ToRole="Equipo" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="EmpresaId" />
+          </Key>
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rut" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RazonSocial" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Empresa" FromRole="Empresa" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_Empresa" FromRole="Empresa" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="Equipo">
+          <Key>
+            <PropertyRef Name="EquipoId" />
+          </Key>
+          <Property Name="EquipoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoId" Type="Int32" />
+          <Property Name="MarcaId" Type="Int32" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Serie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comentario" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GuiaId" Type="Int32" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="CreadorId" Type="Int32" />
+          <Property Name="EstadoId" Type="Int32" />
+          <Property Name="SubEstadoId" Type="Int32" />
+          <Property Name="TecnicoPreId" Type="Int32" />
+          <Property Name="Bolso" Type="Int32" />
+          <Property Name="Mouse" Type="Int32" />
+          <Property Name="Candado" Type="Int32" />
+          <Property Name="EmpresaId" Type="Int32" />
+          <Property Name="MacroEmpresaId" Type="Int32" />
+          <Property Name="ProyectoId" Type="Int32" />
+          <Property Name="ComunaId" Type="Int32" />
+          <Property Name="UbicacionId" Type="Int32" />
+          <Property Name="CentroCostoId" Type="Int32" />
+          <Property Name="GerenteAutorizaId" Type="Int32" />
+          <Property Name="SolicitanteId" Type="Int32" />
+          <Property Name="UsuarioFinalId" Type="Int32" />
+          <Property Name="DireccionId" Type="Int32" />
+          <Property Name="Procesador" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Memoria" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiscoDuro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionMAC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NombrePC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SistemaOperativoId" Type="Int32" />
+          <Property Name="KeyWindows" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TecnicoEntId" Type="Int32" />
+          <Property Name="DistribucionId" Type="Int32" />
+          <Property Name="FechaDistribucion" Type="DateTime" Precision="0" />
+          <Property Name="EmailDistribucion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CentroCosto" Relationship="Self.FK_Equipo_CentroCosto" FromRole="Equipo" ToRole="CentroCosto" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Equipo_Colaborador" FromRole="Equipo" ToRole="Colaborador" />
+          <NavigationProperty Name="Colaborador1" Relationship="Self.FK_Equipo_Colaborador_TE" FromRole="Equipo" ToRole="Colaborador" />
+          <NavigationProperty Name="Colaborador2" Relationship="Self.FK_Equipo_Colaborador_TP" FromRole="Equipo" ToRole="Colaborador" />
+          <NavigationProperty Name="Comuna" Relationship="Self.FK_Equipo_Comuna" FromRole="Equipo" ToRole="Comuna" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_Equipo_Direccion" FromRole="Equipo" ToRole="Direccion" />
+          <NavigationProperty Name="Distribucion" Relationship="Self.FK_Equipo_Distribucion" FromRole="Equipo" ToRole="Distribucion" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK_Equipo_Empresa" FromRole="Equipo" ToRole="Empresa" />
+          <NavigationProperty Name="EstadoEquipo" Relationship="Self.FK_Equipo_EstadoEquipo" FromRole="Equipo" ToRole="EstadoEquipo" />
+          <NavigationProperty Name="Guia" Relationship="Self.FK_Equipo_Guia" FromRole="Equipo" ToRole="Guia" />
+          <NavigationProperty Name="MacroEmpresa" Relationship="Self.FK_Equipo_MacroEmpresa" FromRole="Equipo" ToRole="MacroEmpresa" />
+          <NavigationProperty Name="Marca" Relationship="Self.FK_Equipo_Marca" FromRole="Equipo" ToRole="Marca" />
+          <NavigationProperty Name="Proyecto" Relationship="Self.FK_Equipo_Proyecto" FromRole="Equipo" ToRole="Proyecto" />
+          <NavigationProperty Name="SistemaOperativo" Relationship="Self.FK_Equipo_SistemaOperativo" FromRole="Equipo" ToRole="SistemaOperativo" />
+          <NavigationProperty Name="SubEstadoEquipo" Relationship="Self.FK_Equipo_SubEstadoEquipo" FromRole="Equipo" ToRole="SubEstadoEquipo" />
+          <NavigationProperty Name="TipoEquipo" Relationship="Self.FK_Equipo_TipoEquipo" FromRole="Equipo" ToRole="TipoEquipo" />
+          <NavigationProperty Name="Ubicacion" Relationship="Self.FK_Equipo_Ubicacion" FromRole="Equipo" ToRole="Ubicacion" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Equipo_Usuario_GA" FromRole="Equipo" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario1" Relationship="Self.FK_Equipo_Usuario_SO" FromRole="Equipo" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario2" Relationship="Self.FK_Equipo_Usuario_UF" FromRole="Equipo" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="EstadoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="Int32" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_EstadoEquipo" FromRole="EstadoEquipo" ToRole="Equipo" />
+          <NavigationProperty Name="SubEstadoEquipo" Relationship="Self.FK_SubEstadoEquipo_EstadoEquipo" FromRole="EstadoEquipo" ToRole="SubEstadoEquipo" />
+        </EntityType>
+        <EntityType Name="Guia">
+          <Key>
+            <PropertyRef Name="GuiaId" />
+          </Key>
+          <Property Name="GuiaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroGuia" Type="Int32" />
+          <Property Name="ProveedorId" Type="Int32" />
+          <Property Name="OrdenCompra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NotaVenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaGuia" Type="DateTime" Precision="0" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="CreadorId" Type="Int32" />
+          <Property Name="NumeroFactura" Type="Int32" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Guia_Colaborador" FromRole="Guia" ToRole="Colaborador" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Guia" FromRole="Guia" ToRole="Equipo" />
+          <NavigationProperty Name="Proveedor" Relationship="Self.FK_Guia_Proveedor" FromRole="Guia" ToRole="Proveedor" />
+        </EntityType>
+        <EntityType Name="MacroEmpresa">
+          <Key>
+            <PropertyRef Name="MacroEmpresaId" />
+          </Key>
+          <Property Name="MacroEmpresaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MacroEmpresaNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_MacroEmpresa" FromRole="MacroEmpresa" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_MacroEmpresa" FromRole="MacroEmpresa" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Marca" FromRole="Marca" ToRole="Equipo" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rut" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Guia" Relationship="Self.FK_Guia_Proveedor" FromRole="Proveedor" ToRole="Guia" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="ProyectoId" />
+          </Key>
+          <Property Name="ProyectoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProyectoNombre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Proyecto" FromRole="Proyecto" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_Proyecto" FromRole="Proyecto" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="ProyectoConexion">
+          <Key>
+            <PropertyRef Name="CoId" />
+          </Key>
+          <Property Name="CoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProyectoId" Type="Int32" Nullable="false" />
+          <Property Name="MacroEmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="CCId" Type="Int32" Nullable="false" />
+          <Property Name="UbicacionId" Type="Int32" Nullable="false" />
+          <Property Name="ComunaId" Type="Int32" Nullable="false" />
+          <Property Name="DireccionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CentroCosto" Relationship="Self.FK_ProyectoConexion_CentroCosto" FromRole="ProyectoConexion" ToRole="CentroCosto" />
+          <NavigationProperty Name="Comuna" Relationship="Self.FK_ProyectoConexion_Comuna" FromRole="ProyectoConexion" ToRole="Comuna" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_ProyectoConexion_Direccion" FromRole="ProyectoConexion" ToRole="Direccion" />
+          <NavigationProperty Name="Empresa" Relationship="Self.FK_ProyectoConexion_Empresa" FromRole="ProyectoConexion" ToRole="Empresa" />
+          <NavigationProperty Name="MacroEmpresa" Relationship="Self.FK_ProyectoConexion_MacroEmpresa" FromRole="ProyectoConexion" ToRole="MacroEmpresa" />
+          <NavigationProperty Name="Proyecto" Relationship="Self.FK_ProyectoConexion_Proyecto" FromRole="ProyectoConexion" ToRole="Proyecto" />
+          <NavigationProperty Name="Ubicacion" Relationship="Self.FK_ProyectoConexion_Ubicacion" FromRole="ProyectoConexion" ToRole="Ubicacion" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Colaborador_Rol" FromRole="Rol" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="SistemaOperativo">
+          <Key>
+            <PropertyRef Name="SOId" />
+          </Key>
+          <Property Name="SOId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SONombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_SistemaOperativo" FromRole="SistemaOperativo" ToRole="Equipo" />
+        </EntityType>
+        <EntityType Name="SubEstadoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EstadoEquipoId" Type="Int32" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_SubEstadoEquipo" FromRole="SubEstadoEquipo" ToRole="Equipo" />
+          <NavigationProperty Name="EstadoEquipo" Relationship="Self.FK_SubEstadoEquipo_EstadoEquipo" FromRole="SubEstadoEquipo" ToRole="EstadoEquipo" />
+        </EntityType>
+        <EntityType Name="TipoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tecnico" Type="Int32" />
+          <Property Name="Inventario" Type="Int32" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_TipoEquipo" FromRole="TipoEquipo" ToRole="Equipo" />
+        </EntityType>
+        <EntityType Name="Ubicacion">
+          <Key>
+            <PropertyRef Name="UbicacionId" />
+          </Key>
+          <Property Name="UbicacionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UbicacionNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Ubicacion" FromRole="Ubicacion" ToRole="Equipo" />
+          <NavigationProperty Name="ProyectoConexion" Relationship="Self.FK_ProyectoConexion_Ubicacion" FromRole="Ubicacion" ToRole="ProyectoConexion" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipo" Relationship="Self.FK_Equipo_Usuario_GA" FromRole="Usuario" ToRole="Equipo" />
+          <NavigationProperty Name="Equipo1" Relationship="Self.FK_Equipo_Usuario_SO" FromRole="Usuario" ToRole="Equipo" />
+          <NavigationProperty Name="Equipo2" Relationship="Self.FK_Equipo_Usuario_UF" FromRole="Usuario" ToRole="Equipo" />
+        </EntityType>
+        <Association Name="FK_Equipo_CentroCosto">
+          <End Role="CentroCosto" Type="Self.CentroCosto" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroCosto">
+              <PropertyRef Name="CCId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="CentroCostoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_CentroCosto">
+          <End Role="CentroCosto" Type="Self.CentroCosto" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroCosto">
+              <PropertyRef Name="CCId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="CCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colaborador_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Colaborador">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="CreadorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Colaborador_TE">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="TecnicoEntId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Colaborador_TP">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="TecnicoPreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guia_Colaborador">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+          <End Role="Guia" Type="Self.Guia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Guia">
+              <PropertyRef Name="CreadorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Comuna">
+          <End Role="Comuna" Type="Self.Comuna" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comuna">
+              <PropertyRef Name="ComunaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="ComunaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Comuna">
+          <End Role="Comuna" Type="Self.Comuna" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comuna">
+              <PropertyRef Name="ComunaId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="ComunaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Direccion">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="DireccionId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Direccion">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="DireccionId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Distribucion">
+          <End Role="Distribucion" Type="Self.Distribucion" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distribucion">
+              <PropertyRef Name="DistribucionId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="DistribucionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="EmpresaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="EmpresaId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_EstadoEquipo">
+          <End Role="EstadoEquipo" Type="Self.EstadoEquipo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Guia">
+          <End Role="Guia" Type="Self.Guia" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guia">
+              <PropertyRef Name="GuiaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="GuiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_MacroEmpresa">
+          <End Role="MacroEmpresa" Type="Self.MacroEmpresa" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MacroEmpresa">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="MarcaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="ProyectoId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="ProyectoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_SistemaOperativo">
+          <End Role="SistemaOperativo" Type="Self.SistemaOperativo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SistemaOperativo">
+              <PropertyRef Name="SOId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="SistemaOperativoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_SubEstadoEquipo">
+          <End Role="SubEstadoEquipo" Type="Self.SubEstadoEquipo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubEstadoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="SubEstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_TipoEquipo">
+          <End Role="TipoEquipo" Type="Self.TipoEquipo" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="TipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Ubicacion">
+          <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubicacion">
+              <PropertyRef Name="UbicacionId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="UbicacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Usuario_GA">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="GerenteAutorizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Usuario_SO">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="SolicitanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Usuario_UF">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="UsuarioFinalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubEstadoEquipo_EstadoEquipo">
+          <End Role="EstadoEquipo" Type="Self.EstadoEquipo" Multiplicity="0..1" />
+          <End Role="SubEstadoEquipo" Type="Self.SubEstadoEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoEquipo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubEstadoEquipo">
+              <PropertyRef Name="EstadoEquipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guia_Proveedor">
+          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+          <End Role="Guia" Type="Self.Guia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Guia">
+              <PropertyRef Name="ProveedorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_MacroEmpresa">
+          <End Role="MacroEmpresa" Type="Self.MacroEmpresa" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MacroEmpresa">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="MacroEmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="ProyectoId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="ProyectoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProyectoConexion_Ubicacion">
+          <End Role="Ubicacion" Type="Self.Ubicacion" Multiplicity="1" />
+          <End Role="ProyectoConexion" Type="Self.ProyectoConexion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ubicacion">
+              <PropertyRef Name="UbicacionId" />
+            </Principal>
+            <Dependent Role="ProyectoConexion">
+              <PropertyRef Name="UbicacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InventarioSoporteSistemas_desEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CentroCosto" EntityType="Self.CentroCosto" />
+          <EntitySet Name="Colaborador" EntityType="Self.Colaborador" />
+          <EntitySet Name="Comuna" EntityType="Self.Comuna" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" />
+          <EntitySet Name="Distribucion" EntityType="Self.Distribucion" />
+          <EntitySet Name="Empresa" EntityType="Self.Empresa" />
+          <EntitySet Name="Equipo" EntityType="Self.Equipo" />
+          <EntitySet Name="EstadoEquipo" EntityType="Self.EstadoEquipo" />
+          <EntitySet Name="Guia" EntityType="Self.Guia" />
+          <EntitySet Name="MacroEmpresa" EntityType="Self.MacroEmpresa" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+          <EntitySet Name="Proyecto" EntityType="Self.Proyecto" />
+          <EntitySet Name="ProyectoConexion" EntityType="Self.ProyectoConexion" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="SistemaOperativo" EntityType="Self.SistemaOperativo" />
+          <EntitySet Name="SubEstadoEquipo" EntityType="Self.SubEstadoEquipo" />
+          <EntitySet Name="TipoEquipo" EntityType="Self.TipoEquipo" />
+          <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Equipo_CentroCosto" Association="Self.FK_Equipo_CentroCosto">
+            <End Role="CentroCosto" EntitySet="CentroCosto" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_CentroCosto" Association="Self.FK_ProyectoConexion_CentroCosto">
+            <End Role="CentroCosto" EntitySet="CentroCosto" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colaborador_Rol" Association="Self.FK_Colaborador_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Colaborador" EntitySet="Colaborador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Colaborador" Association="Self.FK_Equipo_Colaborador">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Colaborador_TE" Association="Self.FK_Equipo_Colaborador_TE">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Colaborador_TP" Association="Self.FK_Equipo_Colaborador_TP">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guia_Colaborador" Association="Self.FK_Guia_Colaborador">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Guia" EntitySet="Guia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Comuna" Association="Self.FK_Equipo_Comuna">
+            <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Comuna" Association="Self.FK_ProyectoConexion_Comuna">
+            <End Role="Comuna" EntitySet="Comuna" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Direccion" Association="Self.FK_Equipo_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Direccion" Association="Self.FK_ProyectoConexion_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Distribucion" Association="Self.FK_Equipo_Distribucion">
+            <End Role="Distribucion" EntitySet="Distribucion" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Empresa" Association="Self.FK_Equipo_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Empresa" Association="Self.FK_ProyectoConexion_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_EstadoEquipo" Association="Self.FK_Equipo_EstadoEquipo">
+            <End Role="EstadoEquipo" EntitySet="EstadoEquipo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Guia" Association="Self.FK_Equipo_Guia">
+            <End Role="Guia" EntitySet="Guia" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_MacroEmpresa" Association="Self.FK_Equipo_MacroEmpresa">
+            <End Role="MacroEmpresa" EntitySet="MacroEmpresa" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Marca" Association="Self.FK_Equipo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Proyecto" Association="Self.FK_Equipo_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_SistemaOperativo" Association="Self.FK_Equipo_SistemaOperativo">
+            <End Role="SistemaOperativo" EntitySet="SistemaOperativo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_SubEstadoEquipo" Association="Self.FK_Equipo_SubEstadoEquipo">
+            <End Role="SubEstadoEquipo" EntitySet="SubEstadoEquipo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_TipoEquipo" Association="Self.FK_Equipo_TipoEquipo">
+            <End Role="TipoEquipo" EntitySet="TipoEquipo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Ubicacion" Association="Self.FK_Equipo_Ubicacion">
+            <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Usuario_GA" Association="Self.FK_Equipo_Usuario_GA">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Usuario_SO" Association="Self.FK_Equipo_Usuario_SO">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Usuario_UF" Association="Self.FK_Equipo_Usuario_UF">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubEstadoEquipo_EstadoEquipo" Association="Self.FK_SubEstadoEquipo_EstadoEquipo">
+            <End Role="EstadoEquipo" EntitySet="EstadoEquipo" />
+            <End Role="SubEstadoEquipo" EntitySet="SubEstadoEquipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guia_Proveedor" Association="Self.FK_Guia_Proveedor">
+            <End Role="Proveedor" EntitySet="Proveedor" />
+            <End Role="Guia" EntitySet="Guia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_MacroEmpresa" Association="Self.FK_ProyectoConexion_MacroEmpresa">
+            <End Role="MacroEmpresa" EntitySet="MacroEmpresa" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Proyecto" Association="Self.FK_ProyectoConexion_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProyectoConexion_Ubicacion" Association="Self.FK_ProyectoConexion_Ubicacion">
+            <End Role="Ubicacion" EntitySet="Ubicacion" />
+            <End Role="ProyectoConexion" EntitySet="ProyectoConexion" />
+          </AssociationSet>
+          <FunctionImport Name="SP_DB_Obtener_MyTE" ReturnType="Collection(InventarioSoporteSistemas_desModel.SP_DB_Obtener_MyTE_Result)" />
+          <FunctionImport Name="SP_DB_Obtener_Cuentas" ReturnType="Collection(InventarioSoporteSistemas_desModel.SP_DB_Obtener_Cuentas_Result)" />
+        </EntityContainer>
+        <ComplexType Name="SP_DB_Obtener_MyTE_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="origen" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="SP_DB_Obtener_Cuentas_Result">
+          <Property Type="String" Name="nombrecompleto" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="cargo" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="nickname" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InventarioSoporteSistemas_desModelStoreContainer" CdmEntityContainer="InventarioSoporteSistemas_desEntities">
+          <EntitySetMapping Name="CentroCosto">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.CentroCosto">
+              <MappingFragment StoreEntitySet="CentroCosto">
+                <ScalarProperty Name="CCId" ColumnName="CCId" />
+                <ScalarProperty Name="CCCodigo" ColumnName="CCCodigo" />
+                <ScalarProperty Name="CCDescripcion" ColumnName="CCDescripcion" />
+                <ScalarProperty Name="CCVigencia" ColumnName="CCVigencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colaborador">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Colaborador">
+              <MappingFragment StoreEntitySet="Colaborador">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comuna">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Comuna">
+              <MappingFragment StoreEntitySet="Comuna">
+                <ScalarProperty Name="ComunaId" ColumnName="ComunaId" />
+                <ScalarProperty Name="ComunaNombre" ColumnName="ComunaNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="DireccionNombre" ColumnName="DireccionNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distribucion">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Distribucion">
+              <MappingFragment StoreEntitySet="Distribucion">
+                <ScalarProperty Name="DistribucionId" ColumnName="DistribucionId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Rut" ColumnName="Rut" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresa">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="Rut" ColumnName="Rut" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipo">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Equipo">
+              <MappingFragment StoreEntitySet="Equipo">
+                <ScalarProperty Name="EquipoId" ColumnName="EquipoId" />
+                <ScalarProperty Name="TipoId" ColumnName="TipoId" />
+                <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="GuiaId" ColumnName="GuiaId" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="CreadorId" ColumnName="CreadorId" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="SubEstadoId" ColumnName="SubEstadoId" />
+                <ScalarProperty Name="TecnicoPreId" ColumnName="TecnicoPreId" />
+                <ScalarProperty Name="Bolso" ColumnName="Bolso" />
+                <ScalarProperty Name="Mouse" ColumnName="Mouse" />
+                <ScalarProperty Name="Candado" ColumnName="Candado" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="MacroEmpresaId" ColumnName="MacroEmpresaId" />
+                <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+                <ScalarProperty Name="ComunaId" ColumnName="ComunaId" />
+                <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+                <ScalarProperty Name="CentroCostoId" ColumnName="CentroCostoId" />
+                <ScalarProperty Name="GerenteAutorizaId" ColumnName="GerenteAutorizaId" />
+                <ScalarProperty Name="SolicitanteId" ColumnName="SolicitanteId" />
+                <ScalarProperty Name="UsuarioFinalId" ColumnName="UsuarioFinalId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="Procesador" ColumnName="Procesador" />
+                <ScalarProperty Name="Memoria" ColumnName="Memoria" />
+                <ScalarProperty Name="DiscoDuro" ColumnName="DiscoDuro" />
+                <ScalarProperty Name="DireccionMAC" ColumnName="DireccionMAC" />
+                <ScalarProperty Name="DireccionIP" ColumnName="DireccionIP" />
+                <ScalarProperty Name="NombrePC" ColumnName="NombrePC" />
+                <ScalarProperty Name="SistemaOperativoId" ColumnName="SistemaOperativoId" />
+                <ScalarProperty Name="KeyWindows" ColumnName="KeyWindows" />
+                <ScalarProperty Name="TecnicoEntId" ColumnName="TecnicoEntId" />
+                <ScalarProperty Name="DistribucionId" ColumnName="DistribucionId" />
+                <ScalarProperty Name="FechaDistribucion" ColumnName="FechaDistribucion" />
+                <ScalarProperty Name="EmailDistribucion" ColumnName="EmailDistribucion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoEquipo">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.EstadoEquipo">
+              <MappingFragment StoreEntitySet="EstadoEquipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guia">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Guia">
+              <MappingFragment StoreEntitySet="Guia">
+                <ScalarProperty Name="GuiaId" ColumnName="GuiaId" />
+                <ScalarProperty Name="NumeroGuia" ColumnName="NumeroGuia" />
+                <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+                <ScalarProperty Name="OrdenCompra" ColumnName="OrdenCompra" />
+                <ScalarProperty Name="NotaVenta" ColumnName="NotaVenta" />
+                <ScalarProperty Name="FechaGuia" ColumnName="FechaGuia" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="CreadorId" ColumnName="CreadorId" />
+                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MacroEmpresa">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.MacroEmpresa">
+              <MappingFragment StoreEntitySet="MacroEmpresa">
+                <ScalarProperty Name="MacroEmpresaId" ColumnName="MacroEmpresaId" />
+                <ScalarProperty Name="MacroEmpresaNombre" ColumnName="MacroEmpresaNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marca">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Marca">
+              <MappingFragment StoreEntitySet="Marca">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedor">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Rut" ColumnName="Rut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyecto">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Proyecto">
+              <MappingFragment StoreEntitySet="Proyecto">
+                <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+                <ScalarProperty Name="ProyectoNombre" ColumnName="ProyectoNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProyectoConexion">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.ProyectoConexion">
+              <MappingFragment StoreEntitySet="ProyectoConexion">
+                <ScalarProperty Name="CoId" ColumnName="CoId" />
+                <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+                <ScalarProperty Name="MacroEmpresaId" ColumnName="MacroEmpresaId" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="CCId" ColumnName="CCId" />
+                <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+                <ScalarProperty Name="ComunaId" ColumnName="ComunaId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SistemaOperativo">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.SistemaOperativo">
+              <MappingFragment StoreEntitySet="SistemaOperativo">
+                <ScalarProperty Name="SOId" ColumnName="SOId" />
+                <ScalarProperty Name="SONombre" ColumnName="SONombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubEstadoEquipo">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.SubEstadoEquipo">
+              <MappingFragment StoreEntitySet="SubEstadoEquipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="EstadoEquipoId" ColumnName="EstadoEquipoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoEquipo">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.TipoEquipo">
+              <MappingFragment StoreEntitySet="TipoEquipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Tecnico" ColumnName="Tecnico" />
+                <ScalarProperty Name="Inventario" ColumnName="Inventario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ubicacion">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Ubicacion">
+              <MappingFragment StoreEntitySet="Ubicacion">
+                <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+                <ScalarProperty Name="UbicacionNombre" ColumnName="UbicacionNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_DB_Obtener_MyTE" FunctionName="InventarioSoporteSistemas_desModel.Store.SP_DB_Obtener_MyTE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InventarioSoporteSistemas_desModel.SP_DB_Obtener_MyTE_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="origen" ColumnName="origen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_DB_Obtener_Cuentas" FunctionName="InventarioSoporteSistemas_desModel.Store.SP_DB_Obtener_Cuentas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InventarioSoporteSistemas_desModel.SP_DB_Obtener_Cuentas_Result">
+                <ScalarProperty Name="nombrecompleto" ColumnName="nombrecompleto" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

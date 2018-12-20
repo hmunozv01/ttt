@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Usuario\Desktop\ISSDeploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>12/19/2018 09:58:01</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>12/19/2018 09:57:58</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/04/2017 00:44:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/04/2017 00:44:16</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Helpers.resources.dll">
+      <publishTime>01/28/2015 04:04:36</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Mvc.resources.dll">
+      <publishTime>01/28/2015 04:02:24</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Razor.resources.dll">
+      <publishTime>01/28/2015 04:02:36</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Webpages.Deployment.resources.dll">
+      <publishTime>01/28/2015 04:04:36</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Webpages.Razor.resources.dll">
+      <publishTime>01/28/2015 04:04:36</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Webpages.resources.dll">
+      <publishTime>01/28/2015 04:04:36</publishTime>
+    </File>
+    <File Include="bin/Inventario_des.dll">
+      <publishTime>12/19/2018 09:57:39</publishTime>
+    </File>
+    <File Include="bin/Inventario_des.pdb">
+      <publishTime>12/19/2018 09:57:39</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>01/22/2018 18:40:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>08/15/2017 13:12:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/05/2012 11:08:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 13:50:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/31/2018 16:49:58</publishTime>
+    </File>
+    <File Include="Content/dashboard-vssn.css">
+      <publishTime>07/31/2018 16:49:57</publishTime>
+    </File>
+    <File Include="Content/demo.css">
+      <publishTime>07/31/2018 16:49:57</publishTime>
+    </File>
+    <File Include="Content/Images/apple-icon.png">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/cover.jpeg">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/favicon.png">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/LogoEmpresasSocovesa.jpg">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/LogoEmpresasSocovesa.png">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/LogoEmpresasSocovesaCorto.jpg">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/mask.png">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/new_logo.png">
+      <publishTime>07/31/2018 16:49:03</publishTime>
+    </File>
+    <File Include="Content/Images/sidebar-1.jpg">
+      <publishTime>07/31/2018 16:49:04</publishTime>
+    </File>
+    <File Include="Content/Images/sidebar-2.jpg">
+      <publishTime>07/31/2018 16:49:04</publishTime>
+    </File>
+    <File Include="Content/Images/sidebar-3.jpg">
+      <publishTime>07/31/2018 16:49:04</publishTime>
+    </File>
+    <File Include="Content/Images/sidebar-4.jpg">
+      <publishTime>07/31/2018 16:49:04</publishTime>
+    </File>
+    <File Include="Content/Images/tim_80x80.png">
+      <publishTime>07/31/2018 16:49:04</publishTime>
+    </File>
+    <File Include="Content/jquery.dataTables.min.css">
+      <publishTime>07/31/2018 16:49:57</publishTime>
+    </File>
+    <File Include="Content/material-dashboard.css">
+      <publishTime>07/31/2018 16:49:57</publishTime>
+    </File>
+    <File Include="Content/vsandoval.css">
+      <publishTime>11/22/2018 19:03:45</publishTime>
+    </File>
+    <File Include="InventarioSoporteSistemas_desEntities.edmx.diagram">
+      <publishTime>11/16/2018 13:05:17</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>12/19/2018 09:57:44</publishTime>
+    </File>
+    <File Include="Scripts/amcharts.js">
+      <publishTime>07/31/2018 16:51:00</publishTime>
+    </File>
+    <File Include="Scripts/arrive.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-notify.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/chartist.min.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/demo.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.2.1.min.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.min.js">
+      <publishTime>08/28/2018 19:51:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/light.js">
+      <publishTime>07/31/2018 16:51:00</publishTime>
+    </File>
+    <File Include="Scripts/material-dashboard.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/material.min.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/perfect-scrollbar.jquery.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/pie.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/radar.js">
+      <publishTime>07/31/2018 16:51:00</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/serial.js">
+      <publishTime>07/31/2018 16:51:00</publishTime>
+    </File>
+    <File Include="Scripts/the-basics.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/typeahead.js">
+      <publishTime>07/31/2018 16:51:01</publishTime>
+    </File>
+    <File Include="Scripts/vsandoval.js">
+      <publishTime>12/02/2018 10:52:32</publishTime>
+    </File>
+    <File Include="Views/ISS/CrearGuia.cshtml">
+      <publishTime>12/01/2018 13:03:06</publishTime>
+    </File>
+    <File Include="Views/ISS/Dashboard.cshtml">
+      <publishTime>11/12/2018 18:19:43</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposConDatosBasicos.cshtml">
+      <publishTime>11/12/2018 13:20:19</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposEnPreparacion.cshtml">
+      <publishTime>11/12/2018 13:27:08</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposEnProduccion.cshtml">
+      <publishTime>11/21/2018 16:53:01</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposIngresados.cshtml">
+      <publishTime>11/15/2018 13:33:14</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposListosParaEntrega.cshtml">
+      <publishTime>11/08/2018 12:47:18</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposParaEntrega.cshtml">
+      <publishTime>11/12/2018 13:31:46</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposParaRetiro.cshtml">
+      <publishTime>11/12/2018 13:33:18</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposPostProduccion.cshtml">
+      <publishTime>11/23/2018 13:01:56</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposPreparados.cshtml">
+      <publishTime>11/12/2018 13:28:16</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposSinTecnico.cshtml">
+      <publishTime>11/12/2018 12:12:27</publishTime>
+    </File>
+    <File Include="Views/ISS/EquiposSinUsuarioFinal.cshtml">
+      <publishTime>11/12/2018 12:17:07</publishTime>
+    </File>
+    <File Include="Views/ISS/Error.cshtml">
+      <publishTime>08/09/2018 15:05:41</publishTime>
+    </File>
+    <File Include="Views/ISS/ListarEquipos.cshtml">
+      <publishTime>11/12/2018 18:01:25</publishTime>
+    </File>
+    <File Include="Views/ISS/LoginError.cshtml">
+      <publishTime>07/31/2018 18:30:11</publishTime>
+    </File>
+    <File Include="Views/ISS/ModificarEquipo.cshtml">
+      <publishTime>12/03/2018 18:00:54</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/oEquipo.cshtml">
+      <publishTime>08/13/2018 14:19:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutISS.cshtml">
+      <publishTime>11/21/2018 18:37:53</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>07/30/2018 18:01:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/19/2018 09:57:42</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

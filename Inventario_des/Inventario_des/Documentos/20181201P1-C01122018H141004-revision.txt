@@ -1,0 +1,6 @@
+Tipo Documento: C
+Numero de Serie: 20181201P1
+¡Equipo 20181201P1 encontrado!
+Id Equipo: 9
+Directorio: C:\Users\vsandoval\Documents\Codigo\VS2017\Inventario\Inventario_des\Inventario_des\Documentos\
+PDF generado!

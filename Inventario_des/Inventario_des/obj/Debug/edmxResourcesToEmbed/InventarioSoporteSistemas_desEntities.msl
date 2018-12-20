@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InventarioSoporteSistemas_desModelStoreContainer" CdmEntityContainer="InventarioSoporteSistemas_desEntities">
+    <EntitySetMapping Name="CentroCosto">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.CentroCosto">
+        <MappingFragment StoreEntitySet="CentroCosto">
+          <ScalarProperty Name="CCId" ColumnName="CCId" />
+          <ScalarProperty Name="CCCodigo" ColumnName="CCCodigo" />
+          <ScalarProperty Name="CCDescripcion" ColumnName="CCDescripcion" />
+          <ScalarProperty Name="CCVigencia" ColumnName="CCVigencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colaborador">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Colaborador">
+        <MappingFragment StoreEntitySet="Colaborador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comuna">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Comuna">
+        <MappingFragment StoreEntitySet="Comuna">
+          <ScalarProperty Name="ComunaId" ColumnName="ComunaId" />
+          <ScalarProperty Name="ComunaNombre" ColumnName="ComunaNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direccion">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Direccion">
+        <MappingFragment StoreEntitySet="Direccion">
+          <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+          <ScalarProperty Name="DireccionNombre" ColumnName="DireccionNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distribucion">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Distribucion">
+        <MappingFragment StoreEntitySet="Distribucion">
+          <ScalarProperty Name="DistribucionId" ColumnName="DistribucionId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipo">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Equipo">
+        <MappingFragment StoreEntitySet="Equipo">
+          <ScalarProperty Name="EquipoId" ColumnName="EquipoId" />
+          <ScalarProperty Name="TipoId" ColumnName="TipoId" />
+          <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="GuiaId" ColumnName="GuiaId" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="CreadorId" ColumnName="CreadorId" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="SubEstadoId" ColumnName="SubEstadoId" />
+          <ScalarProperty Name="TecnicoPreId" ColumnName="TecnicoPreId" />
+          <ScalarProperty Name="Bolso" ColumnName="Bolso" />
+          <ScalarProperty Name="Mouse" ColumnName="Mouse" />
+          <ScalarProperty Name="Candado" ColumnName="Candado" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="MacroEmpresaId" ColumnName="MacroEmpresaId" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="ComunaId" ColumnName="ComunaId" />
+          <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+          <ScalarProperty Name="CentroCostoId" ColumnName="CentroCostoId" />
+          <ScalarProperty Name="GerenteAutorizaId" ColumnName="GerenteAutorizaId" />
+          <ScalarProperty Name="SolicitanteId" ColumnName="SolicitanteId" />
+          <ScalarProperty Name="UsuarioFinalId" ColumnName="UsuarioFinalId" />
+          <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+          <ScalarProperty Name="Procesador" ColumnName="Procesador" />
+          <ScalarProperty Name="Memoria" ColumnName="Memoria" />
+          <ScalarProperty Name="DiscoDuro" ColumnName="DiscoDuro" />
+          <ScalarProperty Name="DireccionMAC" ColumnName="DireccionMAC" />
+          <ScalarProperty Name="DireccionIP" ColumnName="DireccionIP" />
+          <ScalarProperty Name="NombrePC" ColumnName="NombrePC" />
+          <ScalarProperty Name="SistemaOperativoId" ColumnName="SistemaOperativoId" />
+          <ScalarProperty Name="KeyWindows" ColumnName="KeyWindows" />
+          <ScalarProperty Name="TecnicoEntId" ColumnName="TecnicoEntId" />
+          <ScalarProperty Name="DistribucionId" ColumnName="DistribucionId" />
+          <ScalarProperty Name="FechaDistribucion" ColumnName="FechaDistribucion" />
+          <ScalarProperty Name="EmailDistribucion" ColumnName="EmailDistribucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoEquipo">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.EstadoEquipo">
+        <MappingFragment StoreEntitySet="EstadoEquipo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guia">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Guia">
+        <MappingFragment StoreEntitySet="Guia">
+          <ScalarProperty Name="GuiaId" ColumnName="GuiaId" />
+          <ScalarProperty Name="NumeroGuia" ColumnName="NumeroGuia" />
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="OrdenCompra" ColumnName="OrdenCompra" />
+          <ScalarProperty Name="NotaVenta" ColumnName="NotaVenta" />
+          <ScalarProperty Name="FechaGuia" ColumnName="FechaGuia" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="CreadorId" ColumnName="CreadorId" />
+          <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MacroEmpresa">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.MacroEmpresa">
+        <MappingFragment StoreEntitySet="MacroEmpresa">
+          <ScalarProperty Name="MacroEmpresaId" ColumnName="MacroEmpresaId" />
+          <ScalarProperty Name="MacroEmpresaNombre" ColumnName="MacroEmpresaNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marca">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Marca">
+        <MappingFragment StoreEntitySet="Marca">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyecto">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Proyecto">
+        <MappingFragment StoreEntitySet="Proyecto">
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="ProyectoNombre" ColumnName="ProyectoNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProyectoConexion">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.ProyectoConexion">
+        <MappingFragment StoreEntitySet="ProyectoConexion">
+          <ScalarProperty Name="CoId" ColumnName="CoId" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="MacroEmpresaId" ColumnName="MacroEmpresaId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="CCId" ColumnName="CCId" />
+          <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+          <ScalarProperty Name="ComunaId" ColumnName="ComunaId" />
+          <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SistemaOperativo">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.SistemaOperativo">
+        <MappingFragment StoreEntitySet="SistemaOperativo">
+          <ScalarProperty Name="SOId" ColumnName="SOId" />
+          <ScalarProperty Name="SONombre" ColumnName="SONombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubEstadoEquipo">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.SubEstadoEquipo">
+        <MappingFragment StoreEntitySet="SubEstadoEquipo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="EstadoEquipoId" ColumnName="EstadoEquipoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoEquipo">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.TipoEquipo">
+        <MappingFragment StoreEntitySet="TipoEquipo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tecnico" ColumnName="Tecnico" />
+          <ScalarProperty Name="Inventario" ColumnName="Inventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubicacion">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Ubicacion">
+        <MappingFragment StoreEntitySet="Ubicacion">
+          <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+          <ScalarProperty Name="UbicacionNombre" ColumnName="UbicacionNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="InventarioSoporteSistemas_desModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DB_Obtener_MyTE" FunctionName="InventarioSoporteSistemas_desModel.Store.SP_DB_Obtener_MyTE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InventarioSoporteSistemas_desModel.SP_DB_Obtener_MyTE_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="origen" ColumnName="origen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DB_Obtener_Cuentas" FunctionName="InventarioSoporteSistemas_desModel.Store.SP_DB_Obtener_Cuentas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InventarioSoporteSistemas_desModel.SP_DB_Obtener_Cuentas_Result">
+          <ScalarProperty Name="nombrecompleto" ColumnName="nombrecompleto" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,63 @@
+﻿@model  Inventario_des.Models.oEquipoDistribuido
+
+@{
+    ViewBag.Title = "ListarEquipos";
+    Layout = "~/Views/Shared/_LayoutISS.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="yellow">
+            <h4 class="title">Equipos con Número de Serie repetido</h4>
+            <p class="category">Favor informar a Desarrollo de Sistemas. </p>
+        </div>
+        <div class="card-content table-responsive">
+
+
+
+            <!-- Tabla Equipos -->
+
+            <table class="table table-hover table-striped" id="myTable">
+                <thead class="text-primary">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].ProveedorNombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].OrdenCompra)</th>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].NumeroGuia)</th>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].TipoNombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].MarcaNombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].ModeloNombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.equipos[0].NumeroSerie)</th>
+                        @*<th>@Html.DisplayNameFor(model => model.equipos[0].actualizar)</th>*@
+                        @*<th>
+                            <i class="material-icons" title="Actualizar">add_shopping_cart</i>
+                            <p class="hidden-lg hidden-md">Actualizar</p>
+                        </th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.equipos.Count > 0)
+                    {
+                        for (int i = 0; i < Model.equipos.Count; i++)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].ProveedorNombre)</td>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].OrdenCompra)</td>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroGuia)</td>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].TipoNombre)</td>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].MarcaNombre)</td>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].ModeloNombre)</td>
+                                <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroSerie)</td>
+                                @*<td><a href="@Url.Action("ModificarEquipo", "ISS", new { numeroserie = Model.equipos[i].NumeroSerie})">@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroSerie)</a></td>*@
+                                @*<td style="text-align: center">@Html.CheckBoxFor(modelItem => modelItem.equipos[i].actualizar)</td>*@
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</div>

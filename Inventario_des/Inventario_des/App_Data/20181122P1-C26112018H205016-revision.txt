@@ -1,0 +1,5 @@
+Numero de Serie: 20181122P1
+¡Equipo 20181122P1 encontrado!
+Id Equipo: 11
+Directorio: C:\Users\vsandoval\Documents\Codigo\VS2017\Inventario\Inventario_des\Inventario_des\App_Data\
+PDF generado!

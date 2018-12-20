@@ -1,0 +1,271 @@
+﻿@model  Inventario_des.Models.oEquipoDistribuido
+
+@{
+    ViewBag.Title = "EquiposListosParaEntrega";
+    Layout = "~/Views/Shared/_LayoutISS.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Equipos Listos para Entrega</h4>
+            <p class="category">Listado de Equipos que contienen los datos básicos, usuario final y técnico</p>
+        </div>
+        <div class="card-content table-responsive">
+
+            @using (Html.BeginForm("EquiposListosParaEntrega", "ISS", FormMethod.Post, new { onsubmit = "return validateFormEquiposListosParaEntrega()" }))
+            {
+
+                <!-- Tabla Equipos -->
+
+                <table class="table table-hover table-striped" id="myTable">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].UbicacionNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].ProyectoNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].UsuarioFinalNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].TipoNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].MarcaNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].ModeloNombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.equipos[0].NumeroSerie)</th>
+                            @*<th>@Html.DisplayNameFor(model => model.equipos[0].actualizar)</th>*@
+                            <th>
+                                <i class="material-icons" title="Actualizar">add_shopping_cart</i>
+                                <p class="hidden-lg hidden-md">Actualizar</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.equipos.Count > 0)
+                        {
+                            for (int i = 0; i < Model.equipos.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].UbicacionNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].ProyectoNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].UsuarioFinalNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].TipoNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].MarcaNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => modelItem.equipos[i].ModeloNombre)</td>
+                                    @*<td>@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroSerie)</td>*@
+                                    <td><a href="@Url.Action("ModificarEquipo", "ISS", new { numeroserie = Model.equipos[i].NumeroSerie})">@Html.DisplayFor(modelItem => modelItem.equipos[i].NumeroSerie)</a></td>
+                                    <td style="text-align: center">@Html.CheckBoxFor(modelItem => modelItem.equipos[i].actualizar)</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+
+
+
+                <!-- Distribución String-->
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">open_with</i> Distribución
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+
+                                        @*@Html.RadioButtonFor(m => m.equipo.Distribucion, "pendiente", new { @id = "radiopendienteid", @checked = "checked", @onclick = "limpiarEmailTecnicoEntId(radiopendienteid)" }) @Html.Label("Pendiente")*@
+
+                                        @Html.RadioButtonFor(m => m.equipo.Distribucion, "entrega", new { @id = "radioentregaid", @checked = "checked", @onclick = "limpiarEmailTecnicoEntId(radioentregaid)" }) @Html.Label("Entrega")
+
+                                        @Html.RadioButtonFor(m => m.equipo.Distribucion, "retira", new { @id = "radioretiraid", @onclick = "limpiarEmailTecnicoEntId(radioretiraid)" }) @Html.Label("Retiro")
+
+                                        <span id="radiodistribucionid_error1" style="display: none;">Campo Obligatorio</span>
+                                        <span id="radiodistribucionid_error3" style="display: none;">Favor seleccionar opción antes de Entregar/Retirar</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating controls" id="divemailtecnicoent">
+
+                                        @Html.LabelFor(model => model.equipo.TecnicoEntEmail, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.equipo.TecnicoEntEmail, new { htmlAttributes = new { @class = "form-control typeahead", @id = "emailtecnicoentid" } })
+                                        <span id="emailtecnicoentid_error1" style="display: none;">Campo Obligatorio</span>
+                                        <span id="emailtecnicoentid_error2" style="display: none;">Favor incorporar e-mail válido</span>
+                                        <span id="emailtecnicoentid_error3" style="display: none;">Favor incorporar e-mail antes de Entregar</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Entrega -->
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">local_shipping</i> Entrega
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.equipo.FechaEntrega, htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group input-append date">
+                                            @Html.EditorFor(model => model.equipo.FechaEntrega, new { htmlAttributes = new { @class = "form-control", @id = "fechaentregaid" } })
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <span id="fechaentregaid_error1" style="display: none;">Campo Obligatorio</span>
+                                            <span id="fechaentregaid_error3" style="display: none;">Favor incorporar fecha antes de Entregar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating controls" id="divemailquienrecibe">
+                                        @Html.LabelFor(model => model.equipo.QuienRecibeEmail, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.equipo.QuienRecibeEmail, new { htmlAttributes = new { @class = "form-control typeahead", @id = "emailquienrecibeid" } })
+                                        <span id="emailquienrecibeid_error1" style="display: none;">Campo Obligatorio</span>
+                                        <span id="emailquienrecibeid_error2" style="display: none;">Favor incorporar e-mail válido</span>
+                                        <span id="emailquienrecibeid_error3" style="display: none;">Favor incorporar e-mail antes de Entregar</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-4 text-right">
+                                        @Html.CheckBoxFor(model => model.equipo.EquipoEntregado, new { @class = "", @id = "equipoentregadoid", @onclick = "limpiarEquipoEntregadoId()" })
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        @Html.LabelFor(model => model.equipo.EquipoEntregado, new { @class = "" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Retira -->
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">
+                            <div class="icon-bar">
+                                <a href="#">
+                                    <i class="material-icons">play_for_work</i> Retiro
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        @Html.LabelFor(model => model.equipo.FechaRetira, htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group input-append date">
+                                            @Html.EditorFor(model => model.equipo.FechaRetira, new { htmlAttributes = new { @class = "form-control", @id = "fecharetiroid" } })
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <span id="fecharetiroid_error1" style="display: none;">Campo Obligatorio</span>
+                                            <span id="fecharetiroid_error3" style="display: none;">Favor incorporar fecha antes de Retirar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating controls" id="divemailquienretira">
+                                        @Html.LabelFor(model => model.equipo.QuienRetiraEmail, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.equipo.QuienRetiraEmail, new { htmlAttributes = new { @class = "form-control typeahead", @id = "emailquienretiraid" } })
+                                        <span id="emailquienretiraid_error1" style="display: none;">Campo Obligatorio</span>
+                                        <span id="emailquienretiraid_error2" style="display: none;">Favor incorporar e-mail válido</span>
+                                        <span id="emailquienretiraid_error3" style="display: none;">Favor incorporar e-mail antes de Retirar</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating controls" id="divrutquienretira">
+                                        @Html.LabelFor(model => model.equipo.QuienRetiraRut, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.equipo.QuienRetiraRut, new { htmlAttributes = new { @class = "form-control typeahead", @id = "rutquienretiraid" } })
+                                        <span id="rutquienretiraid_error1" style="display: none;">Campo Obligatorio</span>
+                                        <span id="rutquienretiraid_error3" style="display: none;">Favor incorporar Rut antes de Retirar</span>
+                                        <span id="rutquienretiraid_error4" style="display: none;">Favor incorporar Rut válido (Ej: 11111111-1)</span>
+                                        <span id="rutquienretiraid_error5" style="display: none;">Favor incorporar Rut asociado al nombre</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating controls" id="divnombrequienretira">
+                                        @Html.LabelFor(model => model.equipo.QuienRetiraNombre, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.equipo.QuienRetiraNombre, new { htmlAttributes = new { @class = "form-control typeahead", @id = "nombrequienretiraid" } })
+                                        <span id="nombrequienretiraid_error1" style="display: none;">Campo Obligatorio</span>
+                                        <span id="nombrequienretiraid_error3" style="display: none;">Favor incorporar Nombre antes de Retirar</span>
+                                        <span id="nombrequienretiraid_error5" style="display: none;">Favor incorporar Nombre asociado al rut</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-4 text-right">
+                                        @Html.CheckBoxFor(model => model.equipo.EquipoRetirado, new { @class = "", @id = "equiporetiradoid", @onclick = "limpiarEquipoRetiradoId()" })
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        @Html.LabelFor(model => model.equipo.EquipoRetirado, new { @class = "" })
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                @*@Html.HiddenFor(m => m.equipo.TecnicoEntId)
+                @Html.HiddenFor(m => m.equipo.TecnicoEntEmail)
+                @Html.HiddenFor(m => m.equipo.SinTecnicoEntId)*@
+
+                <div id="divenviarequiposparaequipodistribuido">
+                    @Html.EditorFor(x => x.equipos)
+                </div>
+
+                <div class="col-md-6">
+                    @if (Model.equipos.Count() > 0)
+                    {
+                        <button type="submit" id="submitELPP" name="submitButton" value="EquiposListosParaEntrega" class="btn btn-primary">Guardar</button>
+                        <div class="clearfix"></div>
+                    }
+                </div>
+            
+            }
+
+        </div>
+    </div>
+</div>
+
+
+@{string stringCuentasAD = string.Empty;}
+@{stringCuentasAD = ViewBag.StringCuentasAD;}
+
+<textarea class="form-control" rows="1" id="listacuentasadid" name="listacuentasad" placeholder="">@stringCuentasAD</textarea>
+
